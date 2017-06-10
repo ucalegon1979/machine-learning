@@ -1,3 +1,5 @@
+import numpy as np
+
 class ojaPCA:
     """
     My class to perform streaming PCA using Oja's algorithm

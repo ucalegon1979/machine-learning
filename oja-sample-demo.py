@@ -1,4 +1,7 @@
-from oja-pca import ojaPCA
+from ojapca import ojaPCA
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
 def plot_objectives(objectives):
     fig, ax = plt.subplots()
@@ -32,3 +35,19 @@ print('My third principal component:', pca.components_[2])
 
 
 plot_objectives(pca.eigvals_)
+
+
+
+
+
+
+
+# Now compare with scikit-learn!
+from sklearn.decomposition import PCA
+
+# Compare to sklearn
+pca = PCA(5, svd_solver='full')
+pca.fit(X)
+print('First principal component:', pca.components_[0])
+print('Second principal component:', pca.components_[1])
+print('Third principal component:', pca.components_[2])
